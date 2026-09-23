@@ -122,3 +122,10 @@ function renderCheckoutSummary() {
     <p><strong>Pagamento:</strong> ${paymentText}</p>
   `;
 }
+
+function submitOrder() {
+  checkoutState.notes = document.getElementById("checkout-notes").value.trim();
+  openWhatsAppOrder();
+  clearCart();
+  closeCheckout();
+}

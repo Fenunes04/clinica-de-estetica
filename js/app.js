@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
       case "checkout-back":
         goToPreviousStep();
         break;
+      case "checkout-submit":
+        submitOrder();
+        break;
     }
   });
 });
