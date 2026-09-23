@@ -210,3 +210,23 @@ button { font-family: var(--font-body); cursor: pointer; }
 .badge--promo { background: #c0392b; color: white; }
 
 @media (min-width: 768px) { .promo-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Product modal */
+.modal { position: fixed; inset: 0; z-index: 60; display: none; }
+.modal--open { display: block; }
+.modal__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); }
+.modal__panel {
+  position: absolute; bottom: 0; left: 0; right: 0; max-height: 90vh; overflow-y: auto;
+  background: var(--color-brown-dark); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: var(--space-4);
+}
+.modal__close { position: absolute; top: var(--space-3); right: var(--space-3); background: none; border: none; color: var(--color-off-white); font-size: 1.2rem; }
+.modal__image { aspect-ratio: 16/9; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--color-terracotta), var(--color-brown)); display: flex; align-items: center; justify-content: center; font-size: 4rem; margin-bottom: var(--space-3); }
+.modal__price { font-size: 1.5rem; font-weight: 700; color: var(--color-orange-burnt); }
+.modal__content label { display: block; margin-bottom: var(--space-1); font-size: 0.85rem; opacity: 0.85; }
+.modal__content textarea { width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--color-brown); background: var(--color-charcoal); color: var(--color-off-white); padding: var(--space-2); min-height: 60px; margin-bottom: var(--space-3); }
+.modal__quantity { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+.modal__quantity button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--color-orange-burnt); background: transparent; color: var(--color-off-white); font-size: 1.2rem; }
+
+@media (min-width: 768px) {
+  .modal__panel { position: relative; max-width: 480px; margin: 5vh auto; border-radius: var(--radius-lg); }
+}

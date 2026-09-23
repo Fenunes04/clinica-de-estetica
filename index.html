@@ -121,7 +121,26 @@
 
   <div id="cart-overlay" class="cart-overlay"></div>
   <aside id="cart-drawer" class="cart-drawer" aria-hidden="true"><!-- TASK 6 --></aside>
-  <div id="product-modal" class="modal" aria-hidden="true"><!-- TASK 5 --></div>
+  <div id="product-modal" class="modal" aria-hidden="true">
+    <div class="modal__overlay" data-action="close-product-modal"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="product-modal-name">
+      <button class="modal__close" data-action="close-product-modal" aria-label="Fechar">✕</button>
+      <div id="product-modal-image" class="modal__image"><span id="product-modal-icon">🍔</span></div>
+      <div class="modal__content">
+        <h3 id="product-modal-name">Nome do produto</h3>
+        <p id="product-modal-description">Descrição</p>
+        <p class="modal__price" id="product-modal-price">R$ 0,00</p>
+        <label for="product-modal-notes">Alguma observação?</label>
+        <textarea id="product-modal-notes" placeholder="Ex: Sem cebola, adicionar molho extra..."></textarea>
+        <div class="modal__quantity">
+          <button data-action="modal-qty-decrease" aria-label="Diminuir quantidade">-</button>
+          <span id="product-modal-quantity">1</span>
+          <button data-action="modal-qty-increase" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="btn btn--primary btn--block" id="product-modal-add" data-action="modal-add-to-cart">ADICIONAR AO CARRINHO</button>
+      </div>
+    </div>
+  </div>
   <div id="checkout-modal" class="modal" aria-hidden="true"><!-- TASK 7 --></div>
 
   <script src="js/utils.js"></script>
