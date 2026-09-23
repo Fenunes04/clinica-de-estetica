@@ -1,6 +1,13 @@
 let currentCategory = "all";
 let currentSearch = "";
 
+function renderProductImage(product) {
+  if (product.image) {
+    return `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" loading="lazy">`;
+  }
+  return `<span class="product-card__icon">${CATEGORY_ICONS[product.category] || "🍽"}</span>`;
+}
+
 function renderProductCard(product) {
   const soldOut = product.available === false;
   const badgeHtml = product.badge
@@ -8,8 +15,8 @@ function renderProductCard(product) {
     : "";
   return `
     <article class="product-card" data-id="${product.id}">
-      <div class="product-card__image product-card__image--${product.category}">
-        <span class="product-card__icon">${CATEGORY_ICONS[product.category] || "🍽"}</span>
+      <div class="product-card__image product-card__image--${product.category} ${product.image ? "product-card__image--photo" : ""}">
+        ${renderProductImage(product)}
       </div>
       ${badgeHtml}
       <div class="product-card__body">

@@ -27,7 +27,10 @@ function openProductModal(id) {
   modalState = { item, quantity: 1 };
   resetModalAddButton();
   const modal = document.getElementById("product-modal");
-  document.getElementById("product-modal-icon").textContent = CATEGORY_ICONS[item.category] || "🔥";
+  const imageContainer = document.getElementById("product-modal-image");
+  imageContainer.innerHTML = item.image
+    ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}">`
+    : `<span>${CATEGORY_ICONS[item.category] || "🔥"}</span>`;
   document.getElementById("product-modal-name").textContent = item.name;
   document.getElementById("product-modal-description").textContent = item.description;
   document.getElementById("product-modal-price").textContent = formatCurrency(getItemPrice(item));
