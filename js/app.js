@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderMenu();
   renderFeatured();
   renderPromotions();
+  renderReviews();
   renderCartDrawer();
   updateCartBadge();
 

@@ -146,6 +146,28 @@ function renderCartDrawer() {
   document.getElementById("cart-total").textContent = formatCurrency(getCartSubtotal());
 }
 
+function renderReviews() {
+  const grid = document.getElementById("reviews-grid");
+  if (!grid) return;
+  const stars = "★".repeat(Math.round(CONFIG.GOOGLE_RATING.score));
+  grid.innerHTML = `
+    <div class="reviews-summary">
+      <span class="reviews-summary__stars">${stars}</span>
+      <span class="reviews-summary__score">${CONFIG.GOOGLE_RATING.score.toFixed(1)}</span>
+      <span class="reviews-summary__count">${CONFIG.GOOGLE_RATING.count} avaliações no Google</span>
+    </div>
+    ${REVIEWS.map(
+      (review) => `
+      <article class="review-card">
+        <p class="review-card__stars">${"★".repeat(review.rating)}</p>
+        <p class="review-card__text">${review.text}</p>
+        <p class="review-card__author">${review.author}</p>
+      </article>
+    `
+    ).join("")}
+  `;
+}
+
 function updateCartBadge() {
   const badge = document.getElementById("cart-count");
   if (!badge) return;
