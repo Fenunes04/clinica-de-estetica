@@ -108,3 +108,48 @@ function renderPromotions() {
     `;
   }).join("");
 }
+
+function renderCartDrawer() {
+  const container = document.getElementById("cart-items");
+  const emptyState = document.getElementById("cart-empty");
+  const summary = document.getElementById("cart-summary");
+  const items = getCartItems();
+  if (items.length === 0) {
+    container.innerHTML = "";
+    emptyState.style.display = "block";
+    summary.style.display = "none";
+    return;
+  }
+  emptyState.style.display = "none";
+  summary.style.display = "block";
+  container.innerHTML = items
+    .map(
+      (item) => `
+    <div class="cart-item" data-cart-item-id="${item.cartItemId}">
+      <div class="cart-item__info">
+        <p class="cart-item__name">${item.name}</p>
+        ${item.notes ? `<p class="cart-item__notes">${item.notes}</p>` : ""}
+        <p class="cart-item__unit-price">${formatCurrency(item.unitPrice)} un.</p>
+      </div>
+      <div class="cart-item__controls">
+        <button class="qty-btn" data-action="cart-decrease" data-cart-item-id="${item.cartItemId}" aria-label="Diminuir quantidade">-</button>
+        <span>${item.quantity}</span>
+        <button class="qty-btn" data-action="cart-increase" data-cart-item-id="${item.cartItemId}" aria-label="Aumentar quantidade">+</button>
+        <button class="cart-item__remove" data-action="cart-remove" data-cart-item-id="${item.cartItemId}" aria-label="Remover ${item.name}">🗑</button>
+      </div>
+      <span class="cart-item__subtotal">${formatCurrency(item.unitPrice * item.quantity)}</span>
+    </div>
+  `
+    )
+    .join("");
+  document.getElementById("cart-subtotal").textContent = formatCurrency(getCartSubtotal());
+  document.getElementById("cart-total").textContent = formatCurrency(getCartSubtotal());
+}
+
+function updateCartBadge() {
+  const badge = document.getElementById("cart-count");
+  if (!badge) return;
+  const count = getCartCount();
+  badge.textContent = String(count);
+  badge.style.display = count > 0 ? "flex" : "none";
+}
