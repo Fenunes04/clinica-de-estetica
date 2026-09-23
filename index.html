@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torandu's Burguer | Hambúrguer Artesanal</title>
+  <meta name="description" content="Hambúrgueres artesanais, ingredientes selecionados e muito sabor. Conheça a Torandu's Burguer e faça seu pedido.">
+  <link rel="canonical" href="https://torandusburguer.com.br/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Torandu's Burguer | Hambúrguer Artesanal">
+  <meta property="og:description" content="Hambúrgueres artesanais, ingredientes selecionados e muito sabor.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D95F02">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="#inicio" class="site-header__logo" data-scroll-to="inicio">
+        <span aria-hidden="true">🤠</span> TORANDU'S BURGUER
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#inicio" data-scroll-to="inicio">Início</a>
+        <a href="#pedidos" data-scroll-to="pedidos">Pedidos</a>
+        <a href="#promocoes" data-scroll-to="promocoes">Promoções</a>
+        <a href="#sobre" data-scroll-to="sobre">Sobre</a>
+        <a href="#avaliacoes" data-scroll-to="avaliacoes">Avaliações</a>
+        <a href="#location" data-scroll-to="location">Contato</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="icon-btn" data-action="open-cart" aria-label="Abrir carrinho">
+          🛒<span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="icon-btn" id="mobile-menu-toggle" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegação mobile">
+    <a href="#inicio" data-scroll-to="inicio">Início</a>
+    <a href="#pedidos" data-scroll-to="pedidos">Pedidos</a>
+    <a href="#promocoes" data-scroll-to="promocoes">Promoções</a>
+    <a href="#sobre" data-scroll-to="sobre">Sobre</a>
+    <a href="#avaliacoes" data-scroll-to="avaliacoes">Avaliações</a>
+    <a href="#location" data-scroll-to="location">Contato</a>
+  </nav>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container">
+        <span class="hero__badge" id="open-status-badge">Carregando horário...</span>
+        <div class="hero__visual" aria-hidden="true">🍔</div>
+        <h1>SEU HAMBÚRGUER.<br>SUA EXPERIÊNCIA.</h1>
+        <p class="subheadline">Hambúrgueres artesanais, ingredientes selecionados e muito sabor preparados para transformar cada lanche em um momento único.</p>
+        <div class="hero__actions">
+          <button class="btn btn--primary" data-scroll-to="pedidos">FAZER MEU PEDIDO</button>
+          <button class="btn btn--secondary" data-scroll-to="pedidos">VER CARDÁPIO</button>
+        </div>
+        <div class="hero__indicators">
+          <span>🔥 Artesanal</span>
+          <span>🥩 Carne selecionada</span>
+          <span>🍔 Hambúrguer suculento</span>
+          <span>⭐ 5,0 no Google</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="section"><div class="container"><!-- TASK 9 --></div></section>
+
+    <section id="pedidos" class="section">
+      <div class="container">
+        <h2 class="section-title">FAÇA SEU PEDIDO</h2>
+        <div class="menu-toolbar">
+          <input type="search" id="menu-search" placeholder="🔎 Buscar hambúrguer..." aria-label="Buscar produto">
+          <div id="filter-chips" class="filter-chips"></div>
+        </div>
+        <div id="menu-grid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section id="queridinhos" class="section">
+      <div class="container">
+        <h2 class="section-title">OS QUERIDINHOS DA CASA</h2>
+        <div id="featured-grid" class="product-grid product-grid--featured"></div>
+      </div>
+    </section>
+
+    <section id="promocoes" class="section">
+      <div class="container">
+        <h2 class="section-title">PROMOÇÕES DA BRASA</h2>
+        <div id="promotions-grid" class="promo-grid"></div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section"><div class="container" id="about"><!-- TASK 9 --></div></section>
+
+    <section id="avaliacoes" class="section">
+      <div class="container">
+        <h2 class="section-title">O QUE NOSSOS CLIENTES DIZEM</h2>
+        <div id="reviews-grid" class="reviews-grid"></div>
+      </div>
+    </section>
+
+    <section class="section"><div class="container" id="trust-badges"><!-- TASK 9 --></div></section>
+
+    <section id="location-section" class="section"><div class="container" id="location"><!-- TASK 10 --></div></section>
+
+    <section id="cta-final" class="section"><!-- TASK 10 --></section>
+  </main>
+
+  <footer class="site-footer" id="footer"><!-- TASK 10 --></footer>
+
+  <nav class="bottom-nav" aria-label="Navegação rápida mobile">
+    <a href="#inicio" data-scroll-to="inicio"><span class="icon">🏠</span>Início</a>
+    <a href="#pedidos" data-scroll-to="pedidos"><span class="icon">🍔</span>Pedidos</a>
+    <a href="#promocoes" data-scroll-to="promocoes"><span class="icon">🔥</span>Promoções</a>
+    <button data-action="open-cart"><span class="icon">🛒</span>Carrinho</button>
+  </nav>
+
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true"><!-- TASK 6 --></aside>
+  <div id="product-modal" class="modal" aria-hidden="true"><!-- TASK 5 --></div>
+  <div id="checkout-modal" class="modal" aria-hidden="true"><!-- TASK 7 --></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data/config.js"></script>
+  <script src="js/data/products.js"></script>
+  <script src="js/data/promotions.js"></script>
+  <script src="js/data/reviews.js"></script>
+  <script src="js/openingHours.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
