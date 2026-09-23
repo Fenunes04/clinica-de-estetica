@@ -1,3 +1,12 @@
+function updateOpenStatusBadge() {
+  const badge = document.getElementById("open-status-badge");
+  if (!badge) return;
+  const open = isOpenNow();
+  badge.textContent = open ? "🟢 Estamos abertos" : "🔴 Fechado no momento";
+  badge.classList.toggle("status-badge--open", open);
+  badge.classList.toggle("status-badge--closed", !open);
+}
+
 function openCartDrawer() {
   document.getElementById("cart-drawer").classList.add("cart-drawer--open");
   document.getElementById("cart-overlay").classList.add("cart-overlay--visible");
@@ -18,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderReviews();
   renderCartDrawer();
   updateCartBadge();
+  updateOpenStatusBadge();
 
   window.addEventListener("cart:updated", () => {
     renderCartDrawer();
@@ -25,6 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("cart-overlay").addEventListener("click", closeCartDrawer);
+
+  document.getElementById("mobile-menu-toggle").addEventListener("click", () => {
+    document.getElementById("mobile-nav").classList.toggle("mobile-nav--open");
+  });
+
+  document.querySelectorAll("[data-scroll-to]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const targetId = el.dataset.scrollTo;
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+      document.getElementById("mobile-nav").classList.remove("mobile-nav--open");
+    });
+  });
 
   const searchInput = document.getElementById("menu-search");
   if (searchInput) {
