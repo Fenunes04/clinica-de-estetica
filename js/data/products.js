@@ -23,20 +23,20 @@ const PRODUCTS = [
 
   { id: "dessert-mini-pudim", name: "Mini Pudim da Chef", description: "Um docim pós-búrguer.", price: 10.00, category: "sobremesas", badge: null, featured: false, available: true, image: "assets/images/products/dessert-mini-pudim.png" },
 
-  { id: "veg-fala-mal-de-mim", name: "Fala Mal De Mim", description: "Pão vegano, carne de lentilha 150g, alface, tomate, cebola roxa e maionese caipira e picles.", price: 36.90, category: "vegetarianos", badge: null, featured: false, available: true },
+  { id: "veg-fala-mal-de-mim", name: "Fala Mal De Mim", description: "Pão vegano, carne de lentilha 150g, alface, tomate, cebola roxa e maionese caipira e picles.", price: 36.90, category: "vegetarianos", badge: null, featured: false, available: true, image: "assets/images/products/veg-fala-mal-de-mim.png" },
   { id: "veg-kibe-vegano", name: "Kibe Vegano", description: "300g de kibe 100% vegetal, feito com ingredientes naturais. (6 unidades)", price: 24.30, category: "vegetarianos", badge: "ESGOTADO", featured: false, available: false },
 
-  { id: "kids-trio", name: "Trio Kids", description: "Pão brioche, smash 160g, queijo cheddar e maionese da casa. Acompanha uma porção de fritas + suco Del Valle laranja.", price: 39.90, category: "kids", badge: null, featured: false, available: true },
+  { id: "kids-trio", name: "Trio Kids", description: "Pão brioche, smash 160g, queijo cheddar e maionese da casa. Acompanha uma porção de fritas + suco Del Valle laranja. Ganhe um brinde exclusivo (até durar nosso estoque).", price: 39.90, category: "kids", badge: null, featured: false, available: true, image: "assets/images/products/kids-trio.png" },
 
-  { id: "add-maionese-caipira", name: "Maionese Caipira", description: "Maionese da casa, receita caipira.", price: 3.00, category: "adicionais", badge: null, featured: false, available: true },
-  { id: "add-maionese-bacon", name: "Maionese de Bacon", description: "Maionese da casa com bacon.", price: 3.00, category: "adicionais", badge: null, featured: false, available: true },
+  { id: "add-maionese-caipira", name: "Maionese Caipira", description: "Maionese da casa, receita caipira.", price: 3.00, category: "adicionais", badge: null, featured: false, available: true, image: "assets/images/products/add-maionese-caipira.png" },
+  { id: "add-maionese-bacon", name: "Maionese de Bacon", description: "Maionese da casa com bacon.", price: 3.00, category: "adicionais", badge: null, featured: false, available: true, image: "assets/images/products/add-maionese-bacon.png" },
   { id: "add-barbecue-branco", name: "Barbecue Branco", description: "Criação da nossa chef, um delicioso molho barbecue branco.", price: 3.00, category: "adicionais", badge: null, featured: false, available: true },
 
-  { id: "shake-moranguinnn", name: "Moranguinnn", description: "Shake de morango, creme de morango, geleia... (descrição parcial)", price: 28.90, category: "shakes", badge: null, featured: false, available: true },
-  { id: "shake-ovotella", name: "Ovotella", description: "Milk-shake com base de creme americano, muita Nutella e o crocante inconfundível do Ovomaltine... (descrição parcial)", price: 29.90, category: "shakes", badge: null, featured: false, available: true },
-  { id: "shake-kinder-de-bao", name: "Kinder de Bão", description: "Núu... trem bão!", price: 29.90, category: "shakes", badge: null, featured: false, available: true },
-  { id: "shake-nutella-pacoca", name: "Nutella com Paçoca", description: "Creme americano, Nutella, amendoim e paçoquinha... (descrição parcial)", price: 28.00, category: "shakes", badge: null, featured: false, available: true },
-  { id: "shake-dodileite", name: "Dodileite", description: "Base de creme americano super cremoso, muito doce de leite... (descrição parcial)", price: 26.00, category: "shakes", badge: null, featured: false, available: true },
+  { id: "shake-moranguinnn", name: "Moranguinnn", description: "Nosso delicioso shake de morango artesanal, creme de morango, geleia... (descrição parcial)", price: 28.90, category: "shakes", badge: null, featured: false, available: true, image: "assets/images/products/shake-moranguinnn.png" },
+  { id: "shake-ovotella", name: "Ovotella", description: "Um milk-shake simplesmente irresistível! Base de creme americano, muita Nutella e o crocante inconfundível do Ovomaltine... (descrição parcial)", price: 29.90, category: "shakes", badge: null, featured: false, available: true, image: "assets/images/products/shake-ovotella.png" },
+  { id: "shake-kinder-de-bao", name: "Kinder de Bão", description: "Uma explosão de sabor... creme americano... pedaços de Kinder por cima. Núu... trem bão! (descrição parcial)", price: 29.90, category: "shakes", badge: null, featured: false, available: true, image: "assets/images/products/shake-kinder-de-bao.png" },
+  { id: "shake-nutella-pacoca", name: "Nutella com Paçoca", description: "Creme americano, Nutella, amendoim e paçoquinha... (descrição parcial)", price: 28.00, category: "shakes", badge: null, featured: false, available: true, image: "assets/images/products/shake-nutella-pacoca.png" },
+  { id: "shake-dodileite", name: "Dodileite", description: "Base de creme americano super cremoso, muito doce de leite... (descrição parcial)", price: 26.00, category: "shakes", badge: null, featured: false, available: true, image: "assets/images/products/shake-dodileite.png" },
 
   { id: "drink-agua-mineral", name: "Água Mineral", description: "Verificar qual marca temos no dia.", price: 4.00, category: "bebidas", badge: null, featured: false, available: true },
   { id: "drink-coca-zero", name: "Refrigerante Coca-Cola Zero Lata", description: "Lata 350ml.", price: 7.00, category: "bebidas", badge: null, featured: false, available: true },
