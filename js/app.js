@@ -68,6 +68,18 @@ document.addEventListener("DOMContentLoaded", () => {
       case "cart-remove":
         removeFromCart(el.dataset.cartItemId);
         break;
+      case "open-checkout":
+        openCheckout();
+        break;
+      case "close-checkout":
+        closeCheckout();
+        break;
+      case "checkout-next":
+        goToNextStep();
+        break;
+      case "checkout-back":
+        goToPreviousStep();
+        break;
     }
   });
 });

@@ -158,7 +158,60 @@
       </div>
     </div>
   </div>
-  <div id="checkout-modal" class="modal" aria-hidden="true"><!-- TASK 7 --></div>
+  <div id="checkout-modal" class="modal" aria-hidden="true">
+    <div class="modal__overlay" data-action="close-checkout"></div>
+    <div class="modal__panel checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="modal__close" data-action="close-checkout" aria-label="Fechar">✕</button>
+      <h3 id="checkout-title">Finalizar pedido</h3>
+      <p id="checkout-error" class="checkout-error" role="alert"></p>
+
+      <div class="checkout-step" data-step="1">
+        <h4>SEUS DADOS</h4>
+        <label for="checkout-name">Nome</label>
+        <input id="checkout-name" type="text" required>
+        <label for="checkout-phone">Telefone</label>
+        <input id="checkout-phone" type="tel" required>
+      </div>
+
+      <div class="checkout-step" data-step="2" style="display:none;">
+        <h4>ENTREGA</h4>
+        <label for="checkout-street">Endereço</label>
+        <input id="checkout-street" type="text" required>
+        <label for="checkout-number">Número</label>
+        <input id="checkout-number" type="text" required>
+        <label for="checkout-complement">Complemento</label>
+        <input id="checkout-complement" type="text">
+        <label for="checkout-neighborhood">Bairro</label>
+        <input id="checkout-neighborhood" type="text" required>
+        <label for="checkout-zip">CEP</label>
+        <input id="checkout-zip" type="text">
+        <label for="checkout-reference">Referência</label>
+        <input id="checkout-reference" type="text">
+      </div>
+
+      <div class="checkout-step" data-step="3" style="display:none;">
+        <h4>FORMA DE PAGAMENTO</h4>
+        <div id="checkout-payment-options"></div>
+        <div id="checkout-change-wrapper" style="display:none;">
+          <label for="checkout-change-for">Troco para quanto?</label>
+          <input id="checkout-change-for" type="text" placeholder="Ex: 100,00">
+        </div>
+      </div>
+
+      <div class="checkout-step" data-step="4" style="display:none;">
+        <h4>CONFIRMAÇÃO</h4>
+        <div id="checkout-summary"></div>
+        <label for="checkout-notes">Observações gerais (opcional)</label>
+        <textarea id="checkout-notes"></textarea>
+      </div>
+
+      <div class="checkout-nav">
+        <button class="btn btn--secondary" data-action="checkout-back" id="checkout-back-btn">VOLTAR</button>
+        <button class="btn btn--primary" data-action="checkout-next" id="checkout-next-btn">AVANÇAR</button>
+        <button class="btn btn--primary" data-action="checkout-submit" id="checkout-submit-btn" style="display:none;">CONFIRMAR PEDIDO</button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/utils.js"></script>
   <script src="js/data/config.js"></script>

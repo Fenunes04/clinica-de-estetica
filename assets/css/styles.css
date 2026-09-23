@@ -254,3 +254,15 @@ button { font-family: var(--font-body); cursor: pointer; }
 .cart-summary { padding: var(--space-3); border-top: 1px solid var(--color-brown); }
 .cart-summary__row { display: flex; justify-content: space-between; margin-bottom: var(--space-2); }
 .cart-summary__row--total { font-weight: 700; font-size: 1.1rem; color: var(--color-orange-burnt); }
+
+/* Checkout wizard */
+.checkout-panel { max-width: 480px; }
+.checkout-error { color: #ff8b7a; min-height: 1.2em; font-size: 0.85rem; }
+.checkout-step label { display: block; margin: var(--space-2) 0 4px; font-size: 0.85rem; opacity: 0.85; }
+.checkout-step input, .checkout-step textarea {
+  width: 100%; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--color-brown);
+  background: var(--color-charcoal); color: var(--color-off-white); font-size: 1rem; margin-bottom: var(--space-2);
+}
+.payment-option { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) 0; }
+.checkout-nav { display: flex; gap: var(--space-2); margin-top: var(--space-4); }
+.checkout-summary__items { list-style: none; padding: 0; margin: 0 0 var(--space-2); }
