@@ -75,3 +75,36 @@ function setMenuSearch(term) {
   currentSearch = term;
   renderMenu();
 }
+
+function renderFeatured() {
+  const grid = document.getElementById("featured-grid");
+  if (!grid) return;
+  const featured = PRODUCTS.filter((p) => p.featured);
+  grid.innerHTML = featured.map(renderProductCard).join("");
+}
+
+function renderPromotions() {
+  const grid = document.getElementById("promotions-grid");
+  if (!grid) return;
+  grid.innerHTML = PROMOTIONS.map((promo) => {
+    const discountPercent = Math.round(
+      ((promo.priceOriginal - promo.pricePromo) / promo.priceOriginal) * 100
+    );
+    return `
+      <article class="promo-card">
+        <div class="promo-card__image"><span>🔥</span></div>
+        <span class="badge badge--promo">${promo.badge}</span>
+        <div class="promo-card__body">
+          <h3>${promo.name}</h3>
+          <p>${promo.description}</p>
+          <div class="promo-card__prices">
+            <span class="promo-card__price-original">${formatCurrency(promo.priceOriginal)}</span>
+            <span class="promo-card__price-promo">${formatCurrency(promo.pricePromo)}</span>
+            <span class="promo-card__discount">-${discountPercent}%</span>
+          </div>
+          <button class="btn btn--primary btn--block" data-action="open-product" data-id="${promo.id}">APROVEITAR</button>
+        </div>
+      </article>
+    `;
+  }).join("");
+}

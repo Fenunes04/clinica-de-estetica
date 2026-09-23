@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   renderFilterChips();
   renderMenu();
+  renderFeatured();
+  renderPromotions();
 
   const searchInput = document.getElementById("menu-search");
   if (searchInput) {
