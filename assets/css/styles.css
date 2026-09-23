@@ -79,6 +79,7 @@ button { font-family: var(--font-body); cursor: pointer; }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .site-header__logo { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-heading); font-size: 1.5rem; }
 .site-header__logo img { height: 40px; width: 40px; }
+.brand-mark { width: 32px; height: 32px; flex-shrink: 0; }
 .site-nav { display: none; gap: var(--space-4); }
 .site-nav a { font-weight: 600; }
 .site-nav a:hover { color: var(--color-orange-burnt); }
@@ -155,6 +156,12 @@ button { font-family: var(--font-body); cursor: pointer; }
 }
 
 /* Menu toolbar, filter chips, product cards, badges */
+.first-order-banner {
+  display: flex; align-items: center; gap: var(--space-2); background: var(--color-brown-dark);
+  border: 1px solid var(--color-orange-burnt); border-radius: var(--radius-md); padding: var(--space-3);
+  margin-bottom: var(--space-4); font-size: 0.9rem;
+}
+.first-order-banner__icon { font-size: 1.3rem; }
 .menu-toolbar { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-4); }
 #menu-search {
   width: 100%; padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--color-brown);

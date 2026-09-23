@@ -11,7 +11,7 @@ function buildOrderMessage() {
   const addressText = `${addr.street}, ${addr.number}${addr.complement ? " - " + addr.complement : ""} - ${addr.neighborhood}${addr.zip ? ", CEP " + addr.zip : ""}${addr.reference ? " (Ref: " + addr.reference + ")" : ""}`;
   const paymentText =
     checkoutState.payment === "dinheiro" && checkoutState.changeFor
-      ? `${checkoutState.paymentLabel} (troco para ${formatCurrency(Number(checkoutState.changeFor.replace(",", ".")) || 0)})`
+      ? `${checkoutState.paymentLabel} (troco para ${formatChangeAmount(checkoutState.changeFor)})`
       : checkoutState.paymentLabel;
 
   return [
@@ -36,5 +36,6 @@ function buildOrderMessage() {
 function openWhatsAppOrder() {
   const message = buildOrderMessage();
   const url = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
+  const opened = window.open(url, "_blank");
+  return Boolean(opened);
 }

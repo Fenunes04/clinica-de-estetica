@@ -19,7 +19,15 @@ function closeCartDrawer() {
   document.getElementById("cart-drawer").setAttribute("aria-hidden", "true");
 }
 
+if (location.protocol === "http:" || location.protocol === "https:") {
+  const manifestLink = document.createElement("link");
+  manifestLink.rel = "manifest";
+  manifestLink.href = "manifest.json";
+  document.head.appendChild(manifestLink);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  renderFirstOrderBanner();
   renderFilterChips();
   renderMenu();
   renderFeatured();
@@ -32,6 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("cart:updated", () => {
     renderCartDrawer();
     updateCartBadge();
+  });
+
+  window.addEventListener("storage", (e) => {
+    if (e.key === CART_STORAGE_KEY) {
+      reloadCartFromStorage();
+    }
   });
 
   document.getElementById("cart-overlay").addEventListener("click", closeCartDrawer);

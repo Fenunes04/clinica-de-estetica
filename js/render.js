@@ -76,6 +76,16 @@ function setMenuSearch(term) {
   renderMenu();
 }
 
+function renderFirstOrderBanner() {
+  const el = document.getElementById("first-order-banner");
+  if (!el) return;
+  const discount = CONFIG.FIRST_ORDER_DISCOUNT;
+  el.innerHTML = `
+    <span class="first-order-banner__icon" aria-hidden="true">🎁</span>
+    <span>Desconto de <strong>${discount.percent}%</strong> na primeira compra — identifique-se. Pedido mínimo ${formatCurrency(discount.minOrder)}.</span>
+  `;
+}
+
 function renderFeatured() {
   const grid = document.getElementById("featured-grid");
   if (!grid) return;
@@ -127,8 +137,8 @@ function renderCartDrawer() {
       (item) => `
     <div class="cart-item" data-cart-item-id="${item.cartItemId}">
       <div class="cart-item__info">
-        <p class="cart-item__name">${item.name}</p>
-        ${item.notes ? `<p class="cart-item__notes">${item.notes}</p>` : ""}
+        <p class="cart-item__name">${escapeHtml(item.name)}</p>
+        ${item.notes ? `<p class="cart-item__notes">${escapeHtml(item.notes)}</p>` : ""}
         <p class="cart-item__unit-price">${formatCurrency(item.unitPrice)} un.</p>
       </div>
       <div class="cart-item__controls">

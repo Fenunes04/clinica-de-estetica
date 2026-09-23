@@ -56,5 +56,5 @@ const PRODUCTS = [
   { id: "drink-refri-2l", name: "Refrigerante 2 Litros", description: "Garrafa 2 litros.", price: 15.00, category: "bebidas", badge: "ESGOTADO", featured: false, available: false },
   { id: "drink-refri-600", name: "Refrigerante 600ml", description: "Consultar disponibilidade.", price: 9.00, category: "bebidas", badge: null, featured: false, available: true },
   { id: "drink-amstel", name: "Amstel", description: "Cerveja lager.", price: 7.00, category: "bebidas", badge: null, featured: false, available: true },
-  { id: "drink-agua-gas-maca", name: "Água Gaseificada Sabor Maçã", description: "Preço não visível na captura de tela original — confirmar com a loja.", price: 0, category: "bebidas", badge: "CONFIRMAR PREÇO", featured: false, available: true }
+  { id: "drink-agua-gas-maca", name: "Água Gaseificada Sabor Maçã", description: "Preço não visível na captura de tela original — confirmar com a loja.", price: 0, category: "bebidas", badge: "CONFIRMAR PREÇO", featured: false, available: false }
 ];

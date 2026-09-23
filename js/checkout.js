@@ -108,24 +108,28 @@ function renderCheckoutSummary() {
   const addr = checkoutState.address;
   const paymentText =
     checkoutState.payment === "dinheiro" && checkoutState.changeFor
-      ? `${checkoutState.paymentLabel} (troco para ${formatCurrency(Number(checkoutState.changeFor.replace(",", ".")) || 0)})`
+      ? `${checkoutState.paymentLabel} (troco para ${escapeHtml(formatChangeAmount(checkoutState.changeFor))})`
       : checkoutState.paymentLabel;
   document.getElementById("checkout-summary").innerHTML = `
     <ul class="checkout-summary__items">
-      ${items.map((i) => `<li>${i.quantity}x ${i.name} — ${formatCurrency(i.unitPrice * i.quantity)}</li>`).join("")}
+      ${items.map((i) => `<li>${i.quantity}x ${escapeHtml(i.name)} — ${formatCurrency(i.unitPrice * i.quantity)}</li>`).join("")}
     </ul>
     <p><strong>Subtotal:</strong> ${formatCurrency(getCartSubtotal())}</p>
     <p><strong>Entrega:</strong> a combinar</p>
     <p><strong>Total:</strong> ${formatCurrency(getCartSubtotal())}</p>
-    <p><strong>Nome:</strong> ${checkoutState.name} — ${checkoutState.phone}</p>
-    <p><strong>Endereço:</strong> ${addr.street}, ${addr.number}${addr.complement ? " - " + addr.complement : ""} - ${addr.neighborhood}</p>
+    <p><strong>Nome:</strong> ${escapeHtml(checkoutState.name)} — ${escapeHtml(checkoutState.phone)}</p>
+    <p><strong>Endereço:</strong> ${escapeHtml(addr.street)}, ${escapeHtml(addr.number)}${addr.complement ? " - " + escapeHtml(addr.complement) : ""} - ${escapeHtml(addr.neighborhood)}</p>
     <p><strong>Pagamento:</strong> ${paymentText}</p>
   `;
 }
 
 function submitOrder() {
   checkoutState.notes = document.getElementById("checkout-notes").value.trim();
-  openWhatsAppOrder();
+  const opened = openWhatsAppOrder();
+  if (!opened) {
+    showCheckoutError("Não foi possível abrir o WhatsApp. Verifique se pop-ups estão bloqueados e tente novamente.");
+    return;
+  }
   clearCart();
   closeCheckout();
 }

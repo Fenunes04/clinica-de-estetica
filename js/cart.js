@@ -1,15 +1,38 @@
 const CART_STORAGE_KEY = "torandus_cart";
 
+function findCatalogItemById(id) {
+  return PRODUCTS.find((p) => p.id === id) || PROMOTIONS.find((p) => p.id === id) || null;
+}
+
 function loadCartFromStorage() {
+  let stored;
   try {
     const raw = localStorage.getItem(CART_STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
+    stored = raw ? JSON.parse(raw) : [];
   } catch (e) {
-    return [];
+    stored = [];
   }
+  if (!Array.isArray(stored)) stored = [];
+
+  const validated = [];
+  stored.forEach((item) => {
+    const catalogItem = findCatalogItemById(item.productId);
+    if (!catalogItem || catalogItem.available === false) return;
+    const currentPrice = catalogItem.price !== undefined ? catalogItem.price : catalogItem.pricePromo;
+    validated.push({ ...item, name: catalogItem.name, unitPrice: currentPrice });
+  });
+  if (validated.length !== stored.length) {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(validated));
+  }
+  return validated;
 }
 
 let cartItems = loadCartFromStorage();
+
+function reloadCartFromStorage() {
+  cartItems = loadCartFromStorage();
+  window.dispatchEvent(new CustomEvent("cart:updated"));
+}
 
 function persistCart() {
   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));

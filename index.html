@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Torandu's Burguer | Hambúrguer Artesanal</title>
   <meta name="description" content="Hambúrgueres artesanais, ingredientes selecionados e muito sabor. Conheça a Torandu's Burguer e faça seu pedido.">
-  <link rel="canonical" href="https://torandusburguer.com.br/">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Torandu's Burguer | Hambúrguer Artesanal">
   <meta property="og:description" content="Hambúrgueres artesanais, ingredientes selecionados e muito sabor.">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#D95F02">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -19,7 +17,13 @@
   <header class="site-header">
     <div class="container">
       <a href="#inicio" class="site-header__logo" data-scroll-to="inicio">
-        <span aria-hidden="true">🤠</span> TORANDU'S BURGUER
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#321C14" stroke="#D95F02" stroke-width="3"/>
+          <path d="M14 28c0-9 8-16 18-16s18 7 18 16" fill="none" stroke="#E76F00" stroke-width="4" stroke-linecap="round"/>
+          <path d="M32 12 L32 6 M22 14 L17 7 M42 14 L47 7" fill="none" stroke="#E76F00" stroke-width="3" stroke-linecap="round"/>
+          <path d="M18 30 Q32 22 46 30" fill="none" stroke="#F5EBDD" stroke-width="2" opacity="0.4"/>
+        </svg>
+        TORANDU'S BURGUER
       </a>
       <nav class="site-nav" aria-label="Navegação principal">
         <a href="#inicio" data-scroll-to="inicio">Início</a>
@@ -83,6 +87,7 @@
     <section id="pedidos" class="section">
       <div class="container">
         <h2 class="section-title">FAÇA SEU PEDIDO</h2>
+        <div id="first-order-banner" class="first-order-banner"></div>
         <div class="menu-toolbar">
           <input type="search" id="menu-search" placeholder="🔎 Buscar hambúrguer..." aria-label="Buscar produto">
           <div id="filter-chips" class="filter-chips"></div>
@@ -169,7 +174,15 @@
     <div class="container">
       <div class="site-footer__grid">
         <div class="site-footer__col">
-          <div class="site-header__logo"><span aria-hidden="true">🤠</span> TORANDU'S BURGUER</div>
+          <div class="site-header__logo">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#321C14" stroke="#D95F02" stroke-width="3"/>
+            <path d="M14 28c0-9 8-16 18-16s18 7 18 16" fill="none" stroke="#E76F00" stroke-width="4" stroke-linecap="round"/>
+            <path d="M32 12 L32 6 M22 14 L17 7 M42 14 L47 7" fill="none" stroke="#E76F00" stroke-width="3" stroke-linecap="round"/>
+            <path d="M18 30 Q32 22 46 30" fill="none" stroke="#F5EBDD" stroke-width="2" opacity="0.4"/>
+          </svg>
+          TORANDU'S BURGUER
+        </div>
           <p style="opacity:0.7;font-size:0.85rem;">Sua hamburgueria favorita.</p>
         </div>
         <div class="site-footer__col">
