@@ -5,6 +5,7 @@ const PROMOTIONS = [
     description: "2 hambúrgueres Quase Todo Dia por um preço especial da Promo da Noite.",
     priceOriginal: 70.00,
     pricePromo: 54.99,
-    badge: "PROMOÇÃO"
+    badge: "PROMOÇÃO",
+    image: "assets/images/products/burg-quase-todo-dia.png"
   }
 ];

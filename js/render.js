@@ -109,7 +109,7 @@ function renderPromotions() {
     );
     return `
       <article class="promo-card">
-        <div class="promo-card__image"><span>🔥</span></div>
+        <div class="promo-card__image">${promo.image ? `<img src="${escapeHtml(promo.image)}" alt="${escapeHtml(promo.name)}" loading="lazy">` : "<span>🔥</span>"}</div>
         <span class="badge badge--promo">${promo.badge}</span>
         <div class="promo-card__body">
           <h3>${promo.name}</h3>
